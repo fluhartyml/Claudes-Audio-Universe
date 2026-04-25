@@ -2,9 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Stream uses Apple Music to search the catalog and play songs you pick. Without access, only 30-second previews are available.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Record, Identify, and Transcribe use the microphone to capture audio while you're using each tab. The mic stops when you leave the tab or background the app.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Transcribe converts your speech to text using Apple's Speech framework, on-device when supported.</string>
 </dict>
 </plist>
