@@ -44,7 +44,7 @@ struct AboutView: View {
                         .font(.body)
                         .foregroundStyle(.secondary)
 
-                    Text("A four-tab audio utility — stream, record, identify, and transcribe. Each tab demonstrates one Apple audio framework.")
+                    Text("A four-tab audio utility — stream, record, identify, and transcribe. Each tab is built on one Apple audio framework.")
                         .font(.body)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
