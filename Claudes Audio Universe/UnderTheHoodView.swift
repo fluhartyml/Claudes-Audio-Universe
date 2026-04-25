@@ -97,6 +97,22 @@ private struct FileDetailSheet: View {
                     .background(Color(.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
 
+                    VStack(alignment: .leading, spacing: 8) {
+                        Label("Source", systemImage: "swift")
+                            .font(.headline)
+                            .foregroundStyle(.tint)
+                        ScrollView(.horizontal, showsIndicators: true) {
+                            Text(entry.source)
+                                .font(.system(.footnote, design: .monospaced))
+                                .textSelection(.enabled)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding()
+                        }
+                        .frame(maxHeight: 400)
+                        .background(Color(.tertiarySystemBackground))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    }
+
                     if let url = entry.githubURL {
                         Link(destination: url) {
                             Label("Open on GitHub", systemImage: "arrow.up.right.square")
