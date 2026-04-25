@@ -18,10 +18,14 @@ import SwiftUI
 
 struct UnderTheHoodView: View {
     var body: some View {
-        PlaceholderTab(
-            icon: "wrench.and.screwdriver",
-            title: "Under the Hood",
-            summary: "Browse every source file of this app, in this app."
-        )
+        AppShell {
+            PlaceholderTab(
+                icon: "wrench.and.screwdriver",
+                title: "Under the Hood",
+                summary: "Browse every source file of this app, in this app."
+            )
+            .navigationTitle("Under the Hood")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }

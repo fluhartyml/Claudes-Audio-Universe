@@ -17,10 +17,14 @@ import SwiftUI
 
 struct IdentifyView: View {
     var body: some View {
-        PlaceholderTab(
-            icon: "shazam.logo",
-            title: "Identify",
-            summary: "ShazamKit. Tap listen, get the match. Auto-saves to My Shazam Tracks; tap the row to open in Apple Music."
-        )
+        AppShell {
+            PlaceholderTab(
+                icon: "shazam.logo",
+                title: "Identify",
+                summary: "ShazamKit. Tap listen, get the match. Auto-saves to My Shazam Tracks; tap the row to open in Apple Music."
+            )
+            .navigationTitle("Identify")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }

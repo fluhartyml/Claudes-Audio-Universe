@@ -18,10 +18,14 @@ import SwiftUI
 
 struct RecordView: View {
     var body: some View {
-        PlaceholderTab(
-            icon: "mic.circle",
-            title: "Record",
-            summary: "AVFoundation. Record a clip to temp storage, play it back, share the file."
-        )
+        AppShell {
+            PlaceholderTab(
+                icon: "mic.circle",
+                title: "Record",
+                summary: "AVFoundation. Record a clip to temp storage, play it back, share the file."
+            )
+            .navigationTitle("Record")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }

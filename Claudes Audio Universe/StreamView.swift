@@ -18,10 +18,14 @@ import SwiftUI
 
 struct StreamView: View {
     var body: some View {
-        PlaceholderTab(
-            icon: "play.circle",
-            title: "Stream",
-            summary: "MusicKit. Search Apple Music, pick a song, hear it play."
-        )
+        AppShell {
+            PlaceholderTab(
+                icon: "play.circle",
+                title: "Stream",
+                summary: "MusicKit. Search Apple Music, pick a song, hear it play."
+            )
+            .navigationTitle("Stream")
+            .toolbarTitleDisplayMode(.inline)
+        }
     }
 }

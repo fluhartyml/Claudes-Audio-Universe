@@ -18,10 +18,14 @@ import SwiftUI
 
 struct TranscribeView: View {
     var body: some View {
-        PlaceholderTab(
-            icon: "text.bubble",
-            title: "Transcribe",
-            summary: "Speech. Tap start, talk, stop, share the resulting text."
-        )
+        AppShell {
+            PlaceholderTab(
+                icon: "text.bubble",
+                title: "Transcribe",
+                summary: "Speech. Tap start, talk, stop, share the resulting text."
+            )
+            .navigationTitle("Transcribe")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
