@@ -4,10 +4,13 @@
 //
 //  Created by Michael Fluharty on 4/25/26.
 //
-//  ShazamKit. Tap listen, get the match. On iOS 17+ / macOS 14+
-//  the song auto-saves to "My Shazam Tracks" via SHLibrary; on
-//  any supported OS the match row taps through to Apple Music
-//  via the SHMediaItem's appleMusicURL.
+//  ── Under the Hood ──────────────────────────────────────────────
+//  SHManagedSession (iOS 15+ / macOS 12+) over raw SHSession
+//  because it owns the audio-buffer plumbing — fewer code paths
+//  to maintain. SHLibrary.default.addItems() auto-saves to
+//  "My Shazam Tracks" on iOS 17+ / macOS 14+; older OSes still
+//  get the tap-through to Apple Music via SHMediaItem.appleMusicURL.
+//  ────────────────────────────────────────────────────────────────
 //
 
 import SwiftUI

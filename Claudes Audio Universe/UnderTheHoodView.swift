@@ -4,10 +4,14 @@
 //
 //  Created by Michael Fluharty on 4/25/26.
 //
-//  Lists every source file of this app for curious readers, with
-//  the file's purpose pulled from DeveloperNotes. Real
-//  implementation will read the bundled source list and surface
-//  each file's contents inline.
+//  ── Under the Hood ──────────────────────────────────────────────
+//  This view IS the Under the Hood feature — a list of the app's
+//  own source files plus each file's UTH callout block (the
+//  comment header you're reading right now), surfaced in-app.
+//  Phase 1 ships file list and callout extraction; Phase 2 adds
+//  inline Lexicon popups so any Swift keyword in the rendered
+//  source can be tapped for a definition.
+//  ────────────────────────────────────────────────────────────────
 //
 
 import SwiftUI

@@ -4,10 +4,13 @@
 //
 //  Created by Michael Fluharty on 4/25/26.
 //
-//  Shared scaffold body used by every feature tab until its real
-//  implementation lands. Replace each feature view's body with the
-//  real UI when MusicKit / AVFoundation / ShazamKit / Speech work
-//  begins.
+//  ── Under the Hood ──────────────────────────────────────────────
+//  A single parameterized scaffold so each feature view can be
+//  filled in independently without touching the shell. As real
+//  implementations land in StreamView, RecordView, IdentifyView,
+//  and TranscribeView, this file's call sites shrink; once all
+//  feature views ship real bodies, this file is deleted.
+//  ────────────────────────────────────────────────────────────────
 //
 
 import SwiftUI

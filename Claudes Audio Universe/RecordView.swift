@@ -4,9 +4,14 @@
 //
 //  Created by Michael Fluharty on 4/25/26.
 //
-//  AVFoundation. Record a clip to temp storage, play it back,
-//  share the file via the system share sheet. Nothing persists
-//  past the session.
+//  ── Under the Hood ──────────────────────────────────────────────
+//  AVAudioRecorder over AVAudioEngine because the goal is
+//  capture-to-file, not real-time DSP. The session category is
+//  .playAndRecord so the same view can play back what it just
+//  captured without paying a category-switch cost. Output is .m4a
+//  (AAC) — small, portable, accepted everywhere the share sheet
+//  sends it.
+//  ────────────────────────────────────────────────────────────────
 //
 
 import SwiftUI

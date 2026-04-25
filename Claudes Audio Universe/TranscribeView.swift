@@ -4,9 +4,14 @@
 //
 //  Created by Michael Fluharty on 4/25/26.
 //
-//  Speech. Tap start, talk, stop, share the resulting text via
-//  the system share sheet. The text is plain string output —
-//  the user picks where it goes.
+//  ── Under the Hood ──────────────────────────────────────────────
+//  SFSpeechAudioBufferRecognitionRequest streams the live mic
+//  rather than re-transcribing a file. On-device recognition is
+//  preferred when supported (no audio leaves the device); cloud
+//  fallback runs only when the recognizer doesn't support local
+//  for the active locale. The recognizer respects user locale
+//  unless explicitly overridden.
+//  ────────────────────────────────────────────────────────────────
 //
 
 import SwiftUI

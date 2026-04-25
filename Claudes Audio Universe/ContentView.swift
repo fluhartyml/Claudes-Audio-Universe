@@ -4,8 +4,15 @@
 //
 //  Created by Michael Fluharty on 4/23/26.
 //
-//  TabView root. Each tab body lives in its own file: StreamView,
-//  RecordView, IdentifyView, TranscribeView, UnderTheHoodView.
+//  ── Under the Hood ──────────────────────────────────────────────
+//  Five sibling tabs because the feature tools are peers, with
+//  Under the Hood beside them as a first-class destination rather
+//  than hidden behind a settings gear. No programmatic tab-selection
+//  state — each tab owns its own session; the shell knows nothing
+//  about what's running inside.
+//
+//  Bible Page (deeper): Reference → ContentView.swift.
+//  ────────────────────────────────────────────────────────────────
 //
 
 import SwiftUI
