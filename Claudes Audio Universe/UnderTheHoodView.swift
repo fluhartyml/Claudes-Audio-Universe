@@ -72,6 +72,7 @@ struct UnderTheHoodView: View {
 private struct FileDetailSheet: View {
     let entry: UnderTheHoodContent.FileEntry
     @Environment(\.dismiss) private var dismiss
+    @State private var lexiconSelection: LexiconEntry?
 
     var body: some View {
         NavigationStack {
@@ -98,15 +99,12 @@ private struct FileDetailSheet: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
 
                     VStack(alignment: .leading, spacing: 8) {
-                        Label("Source", systemImage: "swift")
+                        Label("Source — tap any tinted identifier",
+                              systemImage: "swift")
                             .font(.headline)
                             .foregroundStyle(.tint)
                         ScrollView(.horizontal, showsIndicators: true) {
-                            Text(entry.source)
-                                .font(.system(.footnote, design: .monospaced))
-                                .textSelection(.enabled)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .padding()
+                            IdentifierTaggedSourceView(source: entry.source)
                         }
                         .frame(maxHeight: 400)
                         .background(Color(.tertiarySystemBackground))
@@ -130,6 +128,18 @@ private struct FileDetailSheet: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Done") { dismiss() }
                 }
+            }
+            .environment(\.openURL, OpenURLAction { url in
+                if url.scheme == "lexicon",
+                   let host = url.host?.removingPercentEncoding,
+                   let lexicon = LexiconContent.entry(for: host) {
+                    lexiconSelection = lexicon
+                    return .handled
+                }
+                return .systemAction
+            })
+            .sheet(item: $lexiconSelection) { lex in
+                LexiconSheet(entry: lex)
             }
         }
     }
